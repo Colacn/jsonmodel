@@ -16,7 +16,13 @@ extern BOOL isNull(id value)
 
 extern BOOL isNullString(id value)
 {
-    if ([value isKindOfClass:[NSString class]] && [value isEqualToString:@"<null>"]) return YES;
+    if ([value isKindOfClass:[NSString class]]) {
+        NSString *string = (NSString *)value;
+        if ([string isEqualToString:@"<null>"]) {
+            return YES;
+        }
+    }
+        
     return NO;
 }
 
