@@ -14,6 +14,13 @@ extern BOOL isNull(id value)
     return NO;
 }
 
+extern BOOL isNullString(id value)
+{
+    if ([value isKindOfClass:[NSString class]] && [value isEqualToString:@"<null>"]) return YES;
+    return NO;
+}
+
+
 @implementation JSONValueTransformer
 
 -(id)init

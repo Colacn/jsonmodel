@@ -352,6 +352,13 @@ static JSONKeyMapper* globalKeyMapper = nil;
                 }
                 continue;
             }
+            
+            if (isNullString(jsonValue)) {
+                if (![[self valueForKey:property.name] isEqualToString: @""]) {
+                    [self setValue:@"" forKey: property.name];
+                }
+                continue;
+            }
 
 
             // 1) check if property is itself a JSONModel

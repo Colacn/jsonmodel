@@ -14,6 +14,8 @@
  */
 extern BOOL isNull(id value);
 
+extern BOOL isNullString(id value);
+
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 #pragma mark - JSONValueTransformer interface
