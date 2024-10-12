@@ -353,6 +353,7 @@ static JSONKeyMapper* globalKeyMapper = nil;
                 continue;
             }
             
+            // 0.6) handle "<null>"
             if (isNullString(jsonValue)) {
                 if (![[self valueForKey:property.name] isEqualToString: @""]) {
                     [self setValue:@"" forKey: property.name];
